@@ -5,6 +5,7 @@
 /build
 /bin
 /.gradle
+**/build
 
 # Log file
 *.log

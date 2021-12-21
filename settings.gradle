@@ -6,3 +6,5 @@ pluginManagement {
 	}
 }
 rootProject.name = 'reactive-server'
+include 'reactiveserver'
+include 'remoteserver'
