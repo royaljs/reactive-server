@@ -16,7 +16,7 @@ public class ReactiveUserServiceImpl implements ReactiveUserService{
 	private final ReactiveUserRepository userRepository;
 
 	@Override
-	public Mono<User> findUserById(Long userId){
+	public Mono<User> findUserById(Long userId) {
 		return userRepository.findById(userId);
 	}
 

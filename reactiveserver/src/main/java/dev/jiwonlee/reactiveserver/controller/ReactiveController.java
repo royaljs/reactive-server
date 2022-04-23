@@ -19,6 +19,11 @@ public class ReactiveController {
 
 	private final ReactiveService reactiveService;
 
+	@GetMapping("/")
+	public ResponseEntity<String> test() {
+		return ResponseEntity.ok("Hello World!");
+	}
+
 	@GetMapping("/rest-template")
 	public ResponseEntity<String> restTemplate() throws Exception {
 		return reactiveService.restTemplate();

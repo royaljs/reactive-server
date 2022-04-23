@@ -34,7 +34,7 @@ public class ReactiveServiceImpl implements ReactiveService {
         HttpEntity<?> request = new HttpEntity<>(header);
         return restTemplate
                 .exchange(
-                        "/",
+                        "/test",
                         HttpMethod.GET,
                         request,
                         String.class);
@@ -46,7 +46,7 @@ public class ReactiveServiceImpl implements ReactiveService {
         HttpEntity<?> request = new HttpEntity<>(header);
         ListenableFuture<ResponseEntity<String>> responseDto = asyncRestTemplate
                 .exchange(
-                        "/",
+                        "/test",
                         HttpMethod.GET,
                         request,
                         String.class);
@@ -81,7 +81,7 @@ public class ReactiveServiceImpl implements ReactiveService {
     @Override
     public Mono<String> webclient() {
         Mono<String> res = webClient.get()
-                .uri("/")
+                .uri("/test")
                 .retrieve()
                 .bodyToMono(String.class);
         return res;

@@ -1,4 +1,4 @@
-package dev.jiwonlee.reactiveserver.controller.dto;
+package dev.jiwonlee.remoteserver.controller.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
