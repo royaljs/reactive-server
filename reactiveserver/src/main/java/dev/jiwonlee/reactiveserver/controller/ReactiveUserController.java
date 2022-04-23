@@ -26,6 +26,8 @@ public class ReactiveUserController {
 	@PostMapping("/users")
 	public Mono<ResponseEntity<UserDto>> addUser(@RequestBody UserDto request) {
 		return userService.addUser(request.getName())
-			.map(data -> ResponseEntity.ok().body(new UserDto(data.getId(), data.getName())));
+			.flatMap(data ->
+				Mono.just(ResponseEntity.ok().body(new UserDto(data.getId(), data.getName())))
+			);
 	}
 }
