@@ -30,4 +30,5 @@ public class ReactiveUserController {
 				Mono.just(ResponseEntity.ok().body(new UserDto(data.getId(), data.getName())))
 			);
 	}
+
 }

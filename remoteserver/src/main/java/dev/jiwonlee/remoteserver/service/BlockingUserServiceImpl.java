@@ -8,7 +8,6 @@ import dev.jiwonlee.remoteserver.repository.BlockingUserRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service
-@Transactional
 @RequiredArgsConstructor
 public class BlockingUserServiceImpl implements BlockingUserService {
 	private final BlockingUserRepository userRepository;
@@ -19,6 +18,7 @@ public class BlockingUserServiceImpl implements BlockingUserService {
 	}
 
 	@Override
+	@Transactional
 	public User addUser(String name) {
 		return userRepository.save(new User(name));
 	}

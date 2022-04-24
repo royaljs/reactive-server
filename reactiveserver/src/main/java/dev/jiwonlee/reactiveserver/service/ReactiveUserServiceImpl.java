@@ -9,9 +9,8 @@ import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 
 @Service
-@Transactional
 @RequiredArgsConstructor
-public class ReactiveUserServiceImpl implements ReactiveUserService{
+public class ReactiveUserServiceImpl implements ReactiveUserService {
 
 	private final ReactiveUserRepository userRepository;
 
@@ -21,7 +20,8 @@ public class ReactiveUserServiceImpl implements ReactiveUserService{
 	}
 
 	@Override
-	public  Mono<User> addUser(String name){
+	@Transactional
+	public Mono<User> addUser(String name) {
 		return userRepository.save(new User(name));
 	}
 }

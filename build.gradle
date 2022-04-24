@@ -56,6 +56,7 @@ project(':reactiveserver') {
         implementation 'org.springframework.boot:spring-boot-starter-webflux'
         testImplementation 'io.projectreactor:reactor-test'
         implementation 'dev.miku:r2dbc-mysql'
+        implementation 'io.r2dbc:r2dbc-pool'
     }
 }
 
